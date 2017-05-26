@@ -2,9 +2,13 @@
 
 var path = require('path'),
     express = require('express'),
-    ejs = require('ejs');
+    ejs = require('ejs'),
+    build = require('./build');
 
 var app = express();
+
+build.assets();
+build.watch();
 
 app.set('port', 9000);
 app.set('views', __dirname);
@@ -21,7 +25,7 @@ app.use(
 
 app.get('*', function(request, response) {
   response.set('Cache-Control', 'no-cache');
-  response.render('index.html');
+  response.render('index.html', build.locals);
 });
 
 app.listen(app.get('port'), function() {
