@@ -1,0 +1,42 @@
+{
+  "stylesheets": [
+    {
+      "base": "lib/stylesheets",
+      "files": [
+        "lib/stylesheets/*.css"
+      ]
+    },
+    {
+      "base": "app/stylesheets",
+      "files": [
+        "app/stylesheets/main.scss",
+        "app/stylesheets/**/*.scss"
+      ]
+    }
+  ],
+
+  "javascripts": [
+    {
+      "base": "lib",
+      "files": [
+        "lib/angular.js",
+        "lib/*.js"
+      ]
+    },
+    {
+      "base": "app/javascripts",
+      "files": [
+        "app/javascripts/**/*.js"
+      ]
+    }
+  ],
+
+  "templates": [
+    {
+      "base": "app",
+      "files": [
+        "app/templates/**/*.html"
+      ]
+    }
+  ]
+}
