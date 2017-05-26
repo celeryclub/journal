@@ -1,0 +1,12 @@
+{
+  "name": "journal",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Journal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Steve Davis <steve@celery.club>",
+  "license": "MIT"
+}
