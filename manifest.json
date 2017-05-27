@@ -1,9 +1,9 @@
 {
   "stylesheets": [
     {
-      "base": "lib/stylesheets",
+      "base": "vendor/stylesheets",
       "files": [
-        "lib/stylesheets/*.css"
+        "vendor/stylesheets/*.css"
       ]
     },
     {
