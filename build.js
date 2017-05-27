@@ -4,9 +4,20 @@ var path = require('path'),
     gulp = require('gulp'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
+    cleanCss = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
     streamqueue = require('streamqueue'),
     tinylr = require('tiny-lr'),
     through2 = require('through2');
+
+var production;
+
+if ( process.env.NODE_ENV === 'production' ) {
+  production = true;
+}
+else {
+  production = false;
+}
 
 var _package = require(path.join(__dirname, './package.json')),
     manifest = require(path.join(__dirname, './manifest.json'));
@@ -49,10 +60,16 @@ var stylesheets = function() {
   console.log('Building stylesheets...');
 
   if (manifest.stylesheets.length > 0) {
-    return queueStreams(manifest.stylesheets).
+    var stream =
+      queueStreams(manifest.stylesheets).
       pipe(sass().on('error', sass.logError)).
-      pipe(concat(assetBasename + '.css')).
-      pipe(gulp.dest('public'));
+      pipe(concat(assetBasename + '.css'));
+
+    if (production) {
+      stream = stream.pipe(cleanCss());
+    }
+
+    return stream.pipe(gulp.dest('public'));
   }
 };
 
@@ -60,9 +77,15 @@ var javascripts = function() {
   console.log('Building javascripts...');
 
   if (manifest.javascripts.length > 0) {
-    return queueStreams(manifest.javascripts).
-      pipe(concat(assetBasename + '.js')).
-      pipe(gulp.dest('public'));
+    var stream =
+      queueStreams(manifest.javascripts).
+      pipe(concat(assetBasename + '.js'));
+
+    if (production) {
+      stream = stream.pipe(uglify({ mangle: false }));
+    }
+
+    return stream.pipe(gulp.dest('public'));
   }
 };
 
