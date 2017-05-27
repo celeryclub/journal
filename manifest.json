@@ -3,7 +3,7 @@
     {
       "base": "vendor/stylesheets",
       "files": [
-        "vendor/stylesheets/*.css"
+        "vendor/stylesheets/**/*.css"
       ]
     },
     {
@@ -17,10 +17,10 @@
 
   "javascripts": [
     {
-      "base": "vendor",
+      "base": "vendor/javascripts",
       "files": [
-        "vendor/angular.js",
-        "vendor/*.js"
+        "vendor/javascripts/angular.js",
+        "vendor/javascripts/**/*.js"
       ]
     },
     {
