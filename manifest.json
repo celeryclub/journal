@@ -17,10 +17,10 @@
 
   "javascripts": [
     {
-      "base": "lib",
+      "base": "vendor",
       "files": [
-        "lib/angular.js",
-        "lib/*.js"
+        "vendor/angular.js",
+        "vendor/*.js"
       ]
     },
     {
