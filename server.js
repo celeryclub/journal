@@ -5,10 +5,9 @@ var path = require('path'),
     ejs = require('ejs'),
     build = require('./build');
 
-var app = express();
-
 build.assets();
-build.watch();
+
+var app = express();
 
 app.set('port', 9000);
 app.set('views', __dirname);

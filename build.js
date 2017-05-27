@@ -10,17 +10,10 @@ var path = require('path'),
     tinylr = require('tiny-lr'),
     through2 = require('through2');
 
-var production;
-
-if ( process.env.NODE_ENV === 'production' ) {
-  production = true;
-}
-else {
-  production = false;
-}
-
 var _package = require(path.join(__dirname, './package.json')),
     manifest = require(path.join(__dirname, './manifest.json'));
+
+var production = ( process.env.NODE_ENV === 'production' );
 
 var assetBasename = _package.name + '-' + _package.version;
 
@@ -145,8 +138,11 @@ module.exports = {
     stylesheets();
     javascripts();
     templates();
+
+    if (!production) {
+      watch();
+    }
   },
-  watch: watch,
   locals: {
     stylesheetUrl: '/' + assetBasename + '.css',
     javascriptUrl: '/' + assetBasename + '.js'
