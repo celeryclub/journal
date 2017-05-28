@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node server"
   },
+  "engines": {
+    "node": ">=7.0.0"
+  },
   "author": "Steve Davis <steve@celery.club>",
   "license": "MIT",
   "devDependencies": {
