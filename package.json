@@ -12,7 +12,7 @@
   },
   "author": "Steve Davis <steve@celery.club>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "gulp": "^3.9.1",
