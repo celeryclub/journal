@@ -9,7 +9,7 @@ build.assets();
 
 var app = express();
 
-app.set('port', 9000);
+app.set('port', (process.env.PORT || 9000));
 app.set('views', __dirname);
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');

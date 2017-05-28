@@ -13,7 +13,7 @@ var path = require('path'),
 var _package = require(path.join(__dirname, './package.json')),
     manifest = require(path.join(__dirname, './manifest.json'));
 
-var production = ( process.env.NODE_ENV === 'production' );
+var production = (process.env.NODE_ENV === 'production');
 
 var assetBasename = _package.name + '-' + _package.version;
 
