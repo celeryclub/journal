@@ -1,8 +1,8 @@
 {
-  "name": "journal",
+  "name": "lido",
   "version": "0.0.1",
   "private": true,
-  "description": "Journal",
+  "description": "Lido",
   "main": "server.js",
   "scripts": {
     "start": "node server"
