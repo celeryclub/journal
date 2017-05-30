@@ -5,8 +5,6 @@ angular.module('Lido').controller(
   [
     '$scope', '$rootScope', '$routeParams', 'Note', '$location',
     function($scope, $rootScope, $routeParams, Note, $location) {
-      var noteChanged = false;
-
       Note.find($routeParams.note_id).then(
         function(note) {
           if (note) {
@@ -17,6 +15,8 @@ angular.module('Lido').controller(
           }
         }
       );
+
+      var noteChanged = false;
 
       $scope.changed = function() {
         noteChanged = true;

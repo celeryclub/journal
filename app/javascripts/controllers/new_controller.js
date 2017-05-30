@@ -5,6 +5,8 @@ angular.module('Lido').controller(
   [
     '$scope', '$rootScope', 'Note', '$location',
     function($scope, $rootScope, Note, $location) {
+      $scope.note = {};
+
       var noteChanged = false;
 
       $scope.changed = function() {
