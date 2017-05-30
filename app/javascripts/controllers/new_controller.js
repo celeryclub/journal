@@ -13,7 +13,6 @@ angular.module('Lido').controller(
       };
 
       $scope.save = function() {
-        debugger
         Note.create($scope.note).then(
           function(note) {
             noteChanged = false;
