@@ -36,6 +36,18 @@ angular.module('Lido').factory(
             );
           }
         };
+
+        this.create = function(note) {
+          var data = {
+            note: note
+          };
+
+          return $http.post(ENDPOINT, data).then(
+            function(response) {
+              return response.data;
+            }
+          );
+        };
       };
 
       return new NoteFactory();
