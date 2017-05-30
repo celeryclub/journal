@@ -23,13 +23,18 @@ angular.module('Lido').controller(
       };
 
       $scope.save = function() {
-        Note.update($routeParams.note_id, $scope.note).then(
-          function(note) {
-            noteChanged = false;
+        if (noteChanged) {
+          Note.update($routeParams.note_id, $scope.note).then(
+            function(note) {
+              noteChanged = false;
 
-            $location.path('/notes/' + note.id);
-          }
-        );
+              $location.path('/notes/' + note.id);
+            }
+          );
+        }
+        else {
+          $location.path('/notes/' + $scope.note.id);
+        }
       };
 
       $scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
