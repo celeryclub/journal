@@ -48,6 +48,40 @@ angular.module('Lido').factory(
             }
           );
         };
+
+        this.update = function(id, note) {
+          var data = {
+            note: note
+          };
+
+          return $http.patch(ENDPOINT + '/' + id, data).then(
+            function(response) {
+              return response.data;
+            }
+          );
+        };
+
+        // this.next = function(id) {
+        //   return initialize().then(
+        //     function(notes) {
+        //       var match = matchArticleId(notes, id),
+        //           nextArticle = notes[match.index + 1];
+
+        //       return nextArticle;
+        //     }
+        //   );
+        // };
+
+        // this.previous = function(id) {
+        //   return initialize().then(
+        //     function(notes) {
+        //       var match = matchArticleId(notes, id),
+        //           previousArticle = notes[match.index - 1];
+
+        //       return previousArticle;
+        //     }
+        //   );
+        // };
       };
 
       return new NoteFactory();
