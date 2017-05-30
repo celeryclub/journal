@@ -4,6 +4,8 @@
   <h1 class="note-title">{{ note.title }}</h1>
 
   <div class="note-metadata">
+    <p class="date">Created {{ note.created_at | date:'M/d/yyyy h:mm a' }}</p>
+    <p class="date">Updated {{ note.updated_at | date:'M/d/yyyy h:mm a' }}</p>
     <a class="edit-link" ng-href="/notes/{{ note.id }}/edit">Edit this note</a>
   </div>
 
