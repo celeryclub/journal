@@ -18,7 +18,7 @@ config(
         '/notes/new',
         {
           controller: 'NewController',
-          templateUrl: 'templates/edit.html'
+          templateUrl: 'templates/new.html'
         }
       ).when(
         '/notes/:note_id',
