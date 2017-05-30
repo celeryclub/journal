@@ -1,0 +1,11 @@
+<p ng-cloak>{{ error }}</p>
+
+<div class="note-show">
+  <h1 class="note-title">{{ note.title }}</h1>
+
+  <div class="note-metadata">
+    <a class="edit-link" ng-href="/notes/{{ note.id }}/edit">Edit this note</a>
+  </div>
+
+  <div class="note-body">{{ note.body }}</div>
+</div>
