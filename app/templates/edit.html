@@ -1,0 +1,35 @@
+<p ng-if="error" ng-cloak>{{ error }}</p>
+
+<form ng-submit="save()">
+  <label>
+    <span>Image URL</span>
+    <input type="text" ng-model="note.image" ng-change="changed()">
+  </label>
+
+  <label>
+    <span>Title</span>
+    <input type="text" ng-model="note.title" ng-change="changed()">
+  </label>
+
+  <label>
+    <span>Author name</span>
+    <input type="text" ng-model="note.author.name" ng-change="changed()">
+  </label>
+
+  <label>
+    <span>Author title</span>
+    <input type="text" ng-model="note.author.title" ng-change="changed()">
+  </label>
+
+  <label>
+    <span>Publish date</span>
+    <input type="text" ng-model="note.publishDate" ng-change="changed()">
+  </label>
+
+  <label>
+    <span>Body</span>
+    <textarea ng-model="note.body" ng-change="changed()"></textarea>
+  </label>
+
+  <button type="submit">Save</button>
+</form>
