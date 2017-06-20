@@ -1,5 +1,8 @@
 'use strict';
 
+// Modified from
+// https://github.com/hansottowirtz/simplemde-angular
+
 angular.module('Lido').directive(
   'simpleMde',
   [
