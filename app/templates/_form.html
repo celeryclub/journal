@@ -1,6 +1,11 @@
 <form click-elsewhere="save()" ng-submit="save()">
   <input type="text" ng-model="note.title" ng-change="changed()" placeholder="title">
-  <input type="text" ng-model="note.created_at" ng-change="changed()" placeholder="created date">
+
+  <label>
+    <span>Creation date</span>
+    <input type="text" ng-model="note.created_at" ng-change="changed()">
+  </label>
+
   <textarea ng-model="note.body" ng-change="changed()" placeholder="body"></textarea>
 
   <button type="submit">Save</button>
