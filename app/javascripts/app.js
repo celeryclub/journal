@@ -23,12 +23,6 @@ config(
       ).when(
         '/notes/:note_id',
         {
-          controller: 'ShowController',
-          templateUrl: 'templates/show.html'
-        }
-      ).when(
-        '/notes/:note_id/edit',
-        {
           controller: 'EditController',
           templateUrl: 'templates/edit.html'
         }
