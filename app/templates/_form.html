@@ -6,7 +6,7 @@
     <input type="text" ng-model="note.created_at" ng-change="changed()">
   </label>
 
-  <textarea ng-model="note.body" ng-change="changed()" placeholder="body"></textarea>
+  <textarea simple-mde ng-model="note.body" ng-change="changed()" placeholder="body"></textarea>
 
   <button type="submit">Save</button>
 </form>
