@@ -3,9 +3,9 @@
 angular.module('Lido').factory(
   'Note',
   [
-    '$http', '$q', '$cacheFactory',
-    function($http, $q, $cacheFactory) {
-      var ENDPOINT = 'http://staging.lido.celery.club' + '/notes',
+    '$http', '$q', '$cacheFactory', 'Environment',
+    function($http, $q, $cacheFactory, Environment) {
+      var ENDPOINT = Environment('apiUrl') + '/notes',
           CACHE = $cacheFactory('notes');
 
       var NoteFactory = function() {
