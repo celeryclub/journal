@@ -13,7 +13,7 @@ var path = require('path'),
 var _package = require(path.join(__dirname, 'package.json')),
     manifest = require(path.join(__dirname, 'manifest.json'));
 
-var environmentName = process.env.NODE_ENV || 'development';
+var environmentName = process.env.NODE_ENV || process.argv[2] || 'development';
 
 try {
   var environment = require(path.join(__dirname, 'environments', environmentName + '.js'));
