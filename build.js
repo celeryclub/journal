@@ -13,8 +13,7 @@ var path = require('path'),
 var _package = require(path.join(__dirname, 'package.json')),
     manifest = require(path.join(__dirname, 'manifest.json'));
 
-var environmentName = process.env.NODE_ENV || 'development',
-    production = (environmentName === 'production');
+var environmentName = process.env.NODE_ENV || 'development';
 
 try {
   var environment = require(path.join(__dirname, 'environments', environmentName + '.js'));
@@ -67,7 +66,7 @@ var stylesheets = function() {
       pipe(sass().on('error', sass.logError)).
       pipe(concat(assetBasename + '.css'));
 
-    if (production) {
+    if (environmentName === 'production') {
       stream = stream.pipe(cleanCss());
     }
 
@@ -83,7 +82,7 @@ var javascripts = function() {
       queueStreams(manifest.javascripts).
       pipe(concat(assetBasename + '.js'));
 
-    if (production) {
+    if (environmentName === 'production') {
       stream = stream.pipe(uglify({ mangle: false }));
     }
 
@@ -148,7 +147,7 @@ module.exports = {
     javascripts();
     templates();
 
-    if (!production) {
+    if (environmentName !== 'production') {
       watch();
     }
   },
