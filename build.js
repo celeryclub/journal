@@ -10,10 +10,19 @@ var path = require('path'),
     tinylr = require('tiny-lr'),
     through2 = require('through2');
 
-var _package = require(path.join(__dirname, './package.json')),
-    manifest = require(path.join(__dirname, './manifest.json'));
+var _package = require(path.join(__dirname, 'package.json')),
+    manifest = require(path.join(__dirname, 'manifest.json'));
 
-var production = (process.env.NODE_ENV === 'production');
+var environmentName = process.env.NODE_ENV || 'development',
+    production = (environmentName === 'production');
+
+try {
+  var environment = require(path.join(__dirname, 'environments', environmentName + '.js'));
+}
+catch( e ) {
+  console.log( 'Unable to load environment config for ' + environmentName );
+  process.exit();
+}
 
 var assetBasename = _package.name + '-' + _package.version;
 
@@ -144,6 +153,7 @@ module.exports = {
     }
   },
   locals: {
+    metaTags: environment,
     stylesheetUrl: '/' + assetBasename + '.css',
     javascriptUrl: '/' + assetBasename + '.js'
   }
