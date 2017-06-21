@@ -23,6 +23,8 @@ catch( e ) {
   process.exit();
 }
 
+console.log( 'Using ' + environmentName + ' environment' );
+
 var assetBasename = _package.name + '-' + _package.version;
 
 var queueStreams = function(sources) {
