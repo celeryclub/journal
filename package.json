@@ -6,7 +6,6 @@
   "main": "server",
   "scripts": {
     "build": "gulp build --silent",
-    "clean": "gulp clean --silent",
     "deploy": "gulp deploy --silent",
     "start": "gulp server --silent"
   },
