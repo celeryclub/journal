@@ -1,7 +1,4 @@
-var minimist = require('minimist'),
-    options = minimist(process.argv.slice(2), {});
-
-var environment = options.environment || options.e || 'development';
+var environment = process.env.NODE_ENV || process.argv[4] || 'development';
 
 var lorry = require('lorry')(environment);
 

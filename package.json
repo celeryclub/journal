@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "^3.9.1",
-    "lorry": "0.0.7",
-    "minimist": "^1.2.0"
+    "lorry": "0.0.7"
   }
 }
