@@ -5,8 +5,8 @@ var environment = options.environment || options.e || 'development';
 
 var lorry = require('lorry')(environment);
 
-lorry.install('build');
-lorry.install('server');
-lorry.install('deploy');
+lorry.installTask('build');
+lorry.installTask('server');
+lorry.installTask('deploy');
 
-lorry.setDefault('server');
+lorry.setDefaultTask('server');
