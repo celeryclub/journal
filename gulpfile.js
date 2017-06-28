@@ -1,4 +1,4 @@
-var environment = process.env.NODE_ENV || process.argv[4] || 'development';
+var environment = process.env.NODE_ENV || process.argv[4] || 'staging';
 
 var lorry = require('lorry')(environment);
 
