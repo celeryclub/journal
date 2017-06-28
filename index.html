@@ -7,8 +7,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <% for ( var key in metaTags ) { %>
-      <meta name="environment.<%= key %>" content="<%= metaTags[key] %>">
+    <% for (var key in metaTags) { %>
+      <meta name="<%= key %>" content="<%= metaTags[key] %>">
     <% } %>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
