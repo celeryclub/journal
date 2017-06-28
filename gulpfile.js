@@ -8,5 +8,3 @@ var lorry = require('lorry')(environment);
 lorry.installTask('build');
 lorry.installTask('server');
 lorry.installTask('deploy');
-
-lorry.setDefaultTask('server');

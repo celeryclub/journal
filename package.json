@@ -5,7 +5,10 @@
   "description": "Lido",
   "main": "server",
   "scripts": {
-    "start": "node server"
+    "build": "gulp build --silent",
+    "clean": "gulp clean --silent",
+    "deploy": "gulp deploy --silent",
+    "start": "gulp server --silent"
   },
   "engines": {
     "node": ">=8.0.0"
