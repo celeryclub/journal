@@ -12,19 +12,19 @@ config(
         '/',
         {
           controller: 'HomeController',
-          templateUrl: 'templates/home.html'
+          templateUrl: 'assets/templates/home.html'
         }
       ).when(
         '/notes/new',
         {
           controller: 'NewController',
-          templateUrl: 'templates/new.html'
+          templateUrl: 'assets/templates/new.html'
         }
       ).when(
         '/notes/:note_id',
         {
           controller: 'EditController',
-          templateUrl: 'templates/edit.html'
+          templateUrl: 'assets/templates/edit.html'
         }
       );
 
