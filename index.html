@@ -13,7 +13,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Lato">
-    <link rel="stylesheet" href="<%= stylesheetUrl %>">
+
+    <% for (var i = 0; i < stylesheetUrls.length; i++) { %>
+      <link rel="stylesheet" href="<%= stylesheetUrls[i] %>">
+    <% } %>
 
     <base href="/">
   </head>
@@ -29,6 +32,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script src="<%= javascriptUrl %>"></script>
+
+    <% for (var i = 0; i < javascriptUrls.length; i++) { %>
+      <script src="<%= javascriptUrls[i] %>"></script>
+    <% } %>
   </body>
 </html>
