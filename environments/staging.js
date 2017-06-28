@@ -1,3 +1,5 @@
 module.exports = {
-  apiUrl: "http://staging.lido.celery.club"
+  locals: {
+    apiUrl: "http://staging.lido.celery.club"
+  }
 };
