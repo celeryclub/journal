@@ -1,21 +1,22 @@
 {
-  "name": "lido",
+  "name": "lido-web",
   "version": "0.1.0",
   "private": true,
-  "description": "Lido",
-  "main": "server",
+  "description": "Lido Web",
   "scripts": {
-    "build": "gulp build --silent",
-    "deploy": "gulp deploy --silent",
-    "start": "gulp server --silent"
-  },
-  "engines": {
-    "node": ">=8.0.0"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "watch": "webpack --watch --progress"
   },
   "author": "Steve Davis <steve@celery.club>",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "lorry": "0.1.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1"
+  },
+  "devDependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   }
 }

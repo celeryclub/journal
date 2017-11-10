@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html ng-app="Lido">
+  <head>
+    <title>Lido</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/">
+  </head>
+
+  <body ng-controller="ApplicationController">
+    <div class="container">
+      <nav class="primary-nav">
+        <a ng-href="/">Home</a>
+        <a ng-href="/notes/new">New note</a>
+      </nav>
+
+      <div ng-view></div>
+    </div>
+
+    <script src="assets/bundle.js"></script>
+  </body>
+</html>
