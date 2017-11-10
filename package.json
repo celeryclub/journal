@@ -1,22 +1,33 @@
 {
   "name": "lido-web",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Lido Web",
-  "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
-    "watch": "webpack --watch --progress"
-  },
+  "description": "Lido",
+  "version": "1.0.0",
   "author": "Steve Davis <steve@celery.club>",
   "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1"
+    "vue": "^2.4.4"
   },
   "devDependencies": {
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   }
 }
