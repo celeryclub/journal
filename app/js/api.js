@@ -1,17 +1,11 @@
 const baseUrl = 'http://localhost:3000'
 
+const fetchJSON = (uri) => {
+  return fetch(uri).then((response) => response.json())
+}
+
 export default {
   getNotes() {
-    // return fetch(`${baseUrl}/notes`, { mode: 'no-cors' })
-    return fetch(`${baseUrl}/notes`)
-    // return xhr({
-    //   uri: `${baseUrl}/notes`
-    // })
+    return fetchJSON(`${baseUrl}/notes`)
   }
-
-  // getStoryByUser(id) {
-  //   return xhr({
-  //     url: `/v2/stories?user_id=${id}`,
-  //   });
-  // },
 }
