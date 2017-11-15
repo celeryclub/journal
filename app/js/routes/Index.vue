@@ -5,18 +5,23 @@
 </template>
 
 <script>
-import Note from './Note'
+import api from '../api'
+import Note from '../components/Note'
 
 export default {
   name: 'Notes',
   components: {
     Note,
+  }
+  data() {
+    return {
+      notes: [],
+    }
   },
-  props: {
-    notes: {
-      type: Array,
-      required: true,
-    },
+  mounted() {
+    api.getNotes().then((data) => {
+      this.notes = data.notes
+    })
   },
 }
 </script>

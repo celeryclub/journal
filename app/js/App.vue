@@ -1,25 +1,13 @@
 <template>
-  <Notes :notes="notes" />
+  <div id="app">
+    <router-link to="/">Home</router-link>
+    <router-link to="/new">New</router-link>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import api from './api'
-import Notes from './components/Notes'
-
 export default {
-  name: 'App',
-  components: {
-    Notes,
-  },
-  data() {
-    return {
-      notes: [],
-    }
-  },
-  mounted() {
-    api.getNotes().then((data) => {
-      this.notes = data.notes
-    })
-  },
+  name: 'App'
 }
 </script>
