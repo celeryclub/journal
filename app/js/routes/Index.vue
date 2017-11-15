@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import api from '../api'
-import Note from '../components/Note'
+import api from '@/js/api'
+import Note from '@/js/components/Note'
 
 export default {
   name: 'Notes',
