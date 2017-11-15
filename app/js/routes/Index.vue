@@ -12,7 +12,7 @@ export default {
   name: 'Notes',
   components: {
     Note,
-  }
+  },
   data() {
     return {
       notes: [],
