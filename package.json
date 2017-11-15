@@ -15,6 +15,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
+    "simplemde": "OsmosysSoftware/simplemde-markdown-editor",
     "vue": "^2.5.3",
     "vue-router": "^3.0.1"
   },
