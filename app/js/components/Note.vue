@@ -1,5 +1,5 @@
 <template>
-  <li>{{ note.name }}</li>
+  <li><router-link v-if="note" :to="{ name: 'edit', params: { noteId: note.id }}">{{ note.name }}</router-link></li>
 </template>
 
 <script>
