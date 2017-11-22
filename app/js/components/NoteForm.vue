@@ -1,28 +1,39 @@
 <template>
-  <div>
-    <textarea></textarea>
+  <div class="codemirror-wrapper">
+    <codemirror :value="note.body" :options="options"></codemirror>
     <button @click="$emit('save', note.body)">Save</button>
   </div>
 </template>
 
 <script>
-import SimpleMDE from 'simplemde';
-import 'simplemde/dist/simplemde.min.css';
+import { codemirror } from 'vue-codemirror-lite'
+import 'codemirror/mode/markdown/markdown'
 
 export default {
   name: 'Form',
+  components: {
+    codemirror,
+  },
   props: {
     note: {
       type: Object,
       required: true,
     },
   },
-  mounted() {
-    var simplemde = new SimpleMDE({
-      initialValue: this.note.body,
-      spellChecker: false,
-      status: false,
-    })
+  data() {
+    return {
+      options: {
+        mode: 'markdown',
+        lineWrapping: true,
+      },
+    }
   },
 }
 </script>
+
+<style scoped>
+.codemirror-wrapper {
+  border: 1px solid #ccc;
+  font-family: 'Lato', sans-serif !important;
+}
+</style>
