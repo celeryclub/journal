@@ -6,16 +6,16 @@ const fetchJSON = (uri, options = {}) => {
 
 export default {
   getNotes() {
-    return fetchJSON(`${baseUrl}/notes`)
+    return fetchJSON(`${ baseUrl }/notes`)
   },
 
   getNoteById(noteId) {
-    return fetchJSON(`${baseUrl}/notes2`)
+    return fetchJSON(`${ baseUrl }/notes/${ noteId }`,)
   },
 
   updateNoteById(noteId, data) {
     return fetchJSON(
-      `${baseUrl}/notes2`,
+      `${ baseUrl }/notes/${ noteId }`,
       {
         method: 'PUT',
         body: data,
