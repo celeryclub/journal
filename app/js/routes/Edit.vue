@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Edit {{ $route.params.noteId }}</h1>
-    <NoteForm :note="note" @save="save($event)" />
+    <NoteForm v-if="note" :note="note" @save="save($event)" />
+    <div v-else>No note</div>
   </div>
 </template>
 
