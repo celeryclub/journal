@@ -6,8 +6,8 @@ const APP_PATH = path.resolve(__dirname, './app');
 module.exports = {
   entry: './app/js/main.js',
   output: {
-    path: path.resolve(__dirname, './public'),
-    publicPath: '/public/',
+    path: path.resolve(__dirname, './public/assets'),
+    publicPath: '/public/assets',
     filename: 'build.js'
   },
   module: {
@@ -49,6 +49,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
+    contentBase: path.resolve(__dirname, './public'),
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
