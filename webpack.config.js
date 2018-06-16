@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const S3Plugin = require('webpack-s3-plugin')
 
 const APP_PATH = path.resolve(__dirname, './app');
 
@@ -81,17 +80,5 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    new S3Plugin({
-      exclude: /.*\.json$/,
-      directory: path.resolve(__dirname, './public'),
-      s3Options: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        region: 'us-east-1'
-      },
-      s3UploadOptions: {
-        Bucket: 'lido.celery.club'
-      }
-    })
   ])
 }
