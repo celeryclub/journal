@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import api from '@/js/api'
-import NoteForm from '@/js/components/NoteForm'
+import api from '@/api'
+import NoteForm from '@/components/NoteForm'
 
 export default {
   name: 'Edit',

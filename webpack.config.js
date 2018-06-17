@@ -2,10 +2,10 @@ const path = require('path')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const APP_PATH = path.resolve(__dirname, './app')
+const SRC_PATH = path.resolve(__dirname, './src')
 
 module.exports = {
-  entry: './app/js/main.js',
+  entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, './public/assets'),
     publicPath: '/public/assets',
@@ -40,7 +40,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': APP_PATH,
+      '@': SRC_PATH,
       'vue$': 'vue/dist/vue.esm.js',
     },
     extensions: ['*', '.js', '.vue', '.json'],
