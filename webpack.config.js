@@ -2,13 +2,13 @@ const path = require('path')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const SRC_PATH = path.resolve(__dirname, './src')
-
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: './src/app.js',
+  },
   output: {
-    path: path.resolve(__dirname, './dist/assets'),
-    publicPath: '/dist/assets',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -39,23 +39,17 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': SRC_PATH,
-      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, './src'),
     },
-    extensions: ['*', '.js', '.vue', '.json'],
   },
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: './dist',
     historyApiFallback: true,
-    port: 9000,
+    port: 9001,
     hot: true,
   },
-  performance: {
-    hints: false,
-  },
-  devtool: 'cheap-module-source-map',
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
   ],

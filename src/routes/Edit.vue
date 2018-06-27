@@ -8,7 +8,7 @@
 
 <script>
 import api from '@/api'
-import NoteForm from '@/components/NoteForm'
+import NoteForm from '@/components/NoteForm.vue'
 
 export default {
   name: 'Edit',
