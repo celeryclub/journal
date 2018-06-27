@@ -9,7 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './public/assets'),
     publicPath: '/public/assets',
-    filename: 'build.js',
   },
   module: {
     rules: [
@@ -48,34 +47,16 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
     historyApiFallback: true,
-    noInfo: true,
-    overlay: true,
     port: 9000,
-    disableHostCheck: true,
+    hot: true,
   },
   performance: {
     hints: false,
   },
   devtool: 'cheap-module-source-map',
   plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
   ],
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = 'source-map'
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    }),
-  ])
 }
