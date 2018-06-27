@@ -7,8 +7,8 @@ const SRC_PATH = path.resolve(__dirname, './src')
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, './public/assets'),
-    publicPath: '/public/assets',
+    path: path.resolve(__dirname, './dist/assets'),
+    publicPath: '/dist/assets',
   },
   module: {
     rules: [
@@ -45,7 +45,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json'],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './public'),
+    contentBase: path.resolve(__dirname, './dist'),
     historyApiFallback: true,
     port: 9000,
     hot: true,
