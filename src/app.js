@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from '@/js/routes'
-import App from '@/js/App.vue'
+import routes from '@/routes'
+import App from '@/App.vue'
 
 Vue.use(VueRouter)
 

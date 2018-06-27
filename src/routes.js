@@ -1,6 +1,6 @@
-import Index from '@/js/routes/Index.vue'
-import New from '@/js/routes/New.vue'
-import Edit from '@/js/routes/Edit.vue'
+import Index from '@/routes/Index.vue'
+import New from '@/routes/New.vue'
+import Edit from '@/routes/Edit.vue'
 
 export default [
   { path: '/', component: Index },
